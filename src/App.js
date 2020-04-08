@@ -1,25 +1,12 @@
-import React, { useState } from "react";
-
-const useInput = (initialValue, validator) => {
-  const [value, setValue] = useState(initialValue);
-
-  const onChange = event => {
-    const {
-      target: { value }
-    } = event;
-
-    setValue(value);
-  };
-
-  return { value, onChange };
-};
+import React from "react";
+import { useInput } from "./useInput/index";
 
 const App = () => {
-  // const [item, setItem] = useState();
   const name = useInput("");
 
   return (
     <div className="App">
+      <h1>hello</h1>
       <input placeholder="Name" {...name} />
     </div>
   );
